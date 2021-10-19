@@ -1,4 +1,5 @@
 import discord, asyncio, pytz, datetime
+import os
 
 client = discord.Client()
 
@@ -26,4 +27,5 @@ async def on_message(message):
             await message.channel.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
 
 # 봇을 실행시키기 위한 토큰을 작성해주는 곳
-client.run('ODk5OTU5NzY3MDIyMzI1Nzky.YW6W2A.hcSNsjSE6B2Bvb4GX2E_-wssQDc')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
