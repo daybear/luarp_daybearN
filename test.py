@@ -12,6 +12,7 @@ async def on_message(message):
     if message.content == "테스트": # 메세지 감지
         await message.channel.send ("{} | {}, Hello".format(message.author, message.author.mention))
         await message.author.send ("{} | {}, User, Hello".format(message.author, message.author.mention))
+        await ctx.reply("{} | {}, Hello".format(message.author, message.author.mention))
 
     if message.content.startswith ("!공지"):
         await message.delete()
